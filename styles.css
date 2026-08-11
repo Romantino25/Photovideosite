@@ -633,3 +633,40 @@
     .star-dot { animation: none !important; }
     html { scroll-behavior: auto; }
   }
+  
+  /* ===== MOBILE FIXES ===== */
+
+/* Убираем горизонтальный скролл */
+html, body { overflow-x: hidden; width: 100%; }
+
+@media (max-width: 700px) {
+  .section {
+    scroll-margin-top: 16px;
+  }
+}
+
+
+  .site-header {
+    height: auto;
+    position: sticky;
+  }
+
+  .main-nav .nav-list {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .nav-link {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  .messengers {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .logo { order: -1; }
+}
