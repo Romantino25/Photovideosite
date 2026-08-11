@@ -635,38 +635,60 @@
   }
   
   /* ===== MOBILE FIXES ===== */
-
-/* Убираем горизонтальный скролл */
 html, body { overflow-x: hidden; width: 100%; }
 
-@media (max-width: 700px) {
-  .section {
-    scroll-margin-top: 16px;
-  }
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border: var(--outline) solid #000;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+}
+.nav-toggle span {
+  width: 22px;
+  height: 3px;
+  background: #000;
+  border-radius: 2px;
 }
 
-
-  .site-header {
+@media (max-width: 700px) {
+  .header-inner {
+    flex-wrap: nowrap;
     height: auto;
-    position: sticky;
+    padding: 10px 0;
   }
+  .logo { font-size: 16px; }
+  .logo-text { padding: 3px 8px; font-size: 13px; }
 
+  .nav-toggle { display: flex; }
+
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #1b1a20;
+    border-bottom: var(--outline) solid #000;
+    padding: 16px;
+    z-index: 999;
+  }
+  .main-nav.open { display: block; }
   .main-nav .nav-list {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-    width: 100%;
+    flex-direction: column;
+    gap: 10px;
   }
 
-  .nav-link {
-    padding: 8px 10px;
-    font-size: 14px;
-  }
+  .messengers { gap: 6px; }
+  .messenger-btn { width: 34px; height: 34px; }
+}
 
-  .messengers {
-    justify-content: center;
-    width: 100%;
-  }
-
-  .logo { order: -1; }
+@media (min-width: 701px) {
+  .nav-toggle { display: none; }
 }
