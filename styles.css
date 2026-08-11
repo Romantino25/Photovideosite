@@ -657,16 +657,30 @@ html, body { overflow-x: hidden; width: 100%; }
   border-radius: 2px;
 }
 
+@media (min-width: 701px) {
+  .nav-toggle { display: none; }
+}
+
 @media (max-width: 700px) {
   .header-inner {
     flex-wrap: nowrap;
     height: auto;
     padding: 10px 0;
   }
-  .logo { font-size: 16px; }
-  .logo-text { padding: 3px 8px; font-size: 13px; }
 
-  .nav-toggle { display: flex; }
+  .nav-toggle {
+    display: flex;
+    order: -2;
+  }
+
+  .logo {
+    order: -1;
+    font-size: 16px;
+  }
+  .logo-text {
+    padding: 3px 8px;
+    font-size: 13px;
+  }
 
   .main-nav {
     display: none;
@@ -687,8 +701,4 @@ html, body { overflow-x: hidden; width: 100%; }
 
   .messengers { gap: 6px; }
   .messenger-btn { width: 34px; height: 34px; }
-}
-
-@media (min-width: 701px) {
-  .nav-toggle { display: none; }
 }
