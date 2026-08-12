@@ -702,3 +702,19 @@ html, body { overflow-x: hidden; width: 100%; }
   .messengers { gap: 6px; }
   .messenger-btn { width: 34px; height: 34px; }
 }
+
+@media (max-width: 700px) {
+  .comic-badge.car {
+    bottom: 2%;
+    left: 6%;
+  }
+  .comic-badge.camera {
+    bottom: 2%;
+    right: 6%;
+  }
+}
+
+.hero-inner {
+  opacity: 1 !important;
+  transform: none !important;
+}

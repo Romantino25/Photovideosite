@@ -117,7 +117,7 @@
     }
   
     // Initialize EmailJS
-    emailjs.init('YOUR_PUBLIC_KEY'); // You'll need to replace this with your actual EmailJS public key
+    emailjs.init('afxafr8zDLX1uWzcr');
 
     // Contact form handler
     const form = qs('#contact-form');
@@ -151,14 +151,13 @@
   
         // Send email using EmailJS
         const templateParams = {
-          from_name: name.value,
-          from_email: email.value,
-          phone_number: phone.value || 'Not provided',
+          name: name.value,
+          email: email.value,
+          phone: phone.value || 'Not provided',
           message: message.value,
-          to_email: 'romantinoproject@gmail.com'
         };
 
-        emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+        emailjs.send('service_dae6tt3', 'template_ow5k2gi', templateParams)
           .then(function(response) {
             console.log('SUCCESS!', response.status, response.text);
             showToast('Thanks! Your message has been sent successfully.');
@@ -370,3 +369,11 @@ Description: ${description}`;
       });
     }
   });
+
+  document.querySelectorAll('.nav-toggle').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const nav = document.querySelector('.main-nav');
+    nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', nav.classList.contains('open'));
+  });
+});
